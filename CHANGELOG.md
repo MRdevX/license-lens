@@ -2,12 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.0+canary] - 2024-12-24
+
+- docs: Add comprehensive documentation for core services and utilities ([29b4000])
+
+Full Changelog: [1.0.0+canary...2.0.0+canary]
+
 ## [1.0.0+canary] - 2024-12-24
 
 ### Features
 
 - feat: Enhance license-scout configuration and add GitHub Actions for publishing ([53e2ef5])
 - feat: Add dependencies and devDependencies to ProjectInfo and PackageJson interfaces ([a7d4970])
+
+### Others
+
+- chore: release 1.0.0+canary ([aeb8920])
 
 Full Changelog: [0.3.1-0+canary...1.0.0+canary]
 
@@ -86,9 +96,13 @@ Full Changelog: [0.1.0...0.1.1]
 
 - docs: Add README.md for License Scout tool ([098c027])
 
+[2.0.0+canary]: https://github.com/MRdevX/license-scout/compare/1.0.0+canary...2.0.0+canary
+[29b4000]: https://github.com/MRdevX/license-scout/commit/29b400049b1bcb8739523eba080f4524f99b7d12
+[1.0.0+canary...2.0.0+canary]: https://github.com/MRdevX/license-scout/compare/1.0.0+canary...2.0.0+canary
 [1.0.0+canary]: https://github.com/MRdevX/license-scout/compare/0.3.1-0+canary...1.0.0+canary
 [53e2ef5]: https://github.com/MRdevX/license-scout/commit/53e2ef5dbeb16749e826b5423eb38bae455e0f68
 [a7d4970]: https://github.com/MRdevX/license-scout/commit/a7d49709042cf9b0e7d81ded4c8a984668776051
+[aeb8920]: https://github.com/MRdevX/license-scout/commit/aeb8920710602b9e6c9946921ce3cdd39bd6f2ba
 [0.3.1-0+canary...1.0.0+canary]: https://github.com/MRdevX/license-scout/compare/0.3.1-0+canary...1.0.0+canary
 [0.3.1-0+canary]: https://github.com/MRdevX/license-scout/compare/0.3.0...0.3.1-0+canary
 [0903aaf]: https://github.com/MRdevX/license-scout/commit/0903aafc1c3b432bf5e523342c0fe958467f31b2
