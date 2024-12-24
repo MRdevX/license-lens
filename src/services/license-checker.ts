@@ -44,7 +44,11 @@ const analyzeProjects = async (projects: string[], rootDir: string): Promise<Pro
   return results;
 };
 
-export const checkLicenses = async (rootDir: string, outputFile: string, config: { outputFormat: "text" | "json" }) => {
+export const checkLicenses = async (
+  rootDir: string,
+  outputFile: string,
+  config: { outputFormat: "text" | "json" }
+): Promise<void> => {
   try {
     console.log("🔍 Starting license scan...");
     const projects = await findProjects(rootDir, DEFAULT_CONFIG);
