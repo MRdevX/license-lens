@@ -9,6 +9,13 @@ export const writeResults = async (results: ProjectInfo[], outputFile: string, f
   await Deno.writeTextFile(outputFile, content);
 };
 
+const formatDependencies = (deps?: Record<string, string>): string => {
+  if (!deps || Object.keys(deps).length === 0) return "";
+  return Object.entries(deps)
+    .map(([name, version]) => `  ${name}: ${version}`)
+    .join("\n");
+};
+
 const formatTextResults = (results: ProjectInfo[]): string =>
   results
     .map((r) =>
@@ -20,6 +27,8 @@ const formatTextResults = (results: ProjectInfo[]): string =>
         r.author ? `Author: ${r.author}` : "",
         r.repository ? `Repository: ${r.repository}` : "",
         r.license ? `Package License: ${r.license}` : "",
+        r.dependencies ? `Dependencies:\n${formatDependencies(r.dependencies)}` : "",
+        r.devDependencies ? `Dev Dependencies:\n${formatDependencies(r.devDependencies)}` : "",
         r.licenses ? `Dependencies Licenses:\n${r.licenses}` : "",
         "=".repeat(80),
       ]

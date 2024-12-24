@@ -27,6 +27,8 @@ const analyzeProjects = async (projects: string[], rootDir: string): Promise<Pro
         author: packageJson.author,
         repository: repoUrl,
         license: packageJson.license,
+        dependencies: packageJson.dependencies,
+        devDependencies: packageJson.devDependencies,
       });
 
       const licenseOutput = await runCommand("npx license-checker-rseidelsohn --summary", project);
