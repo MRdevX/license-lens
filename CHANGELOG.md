@@ -2,8 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.2.3] - 2024-12-24
+
+- chore: remove outdated comments from license-lens.ts ([8b32882])
+
+Full Changelog: [0.2.2...0.2.3]
+
 ## [0.2.2] - 2024-12-24
 
+- chore: release 0.2.2 ([dd909f3])
 - chore: update README to reflect project name change from License Scout to License Lens ([99a3d39])
 - chore: update .gitignore and enhance license-checker functionality ([2405f8b])
 
@@ -91,7 +98,11 @@ Full Changelog: [0.1.0...0.2.0]
 - refactor: Update deno.json to remove compiler options and add start task; create license-check-results.txt ([8b68c2a])
 - docs: Add README.md for License Scout tool ([098c027])
 
+[0.2.3]: https://github.com/MRdevX/license-lens/compare/0.2.2...0.2.3
+[8b32882]: https://github.com/MRdevX/license-lens/commit/8b3288293be5692f4928559cee30fd65ab1f4b4f
+[0.2.2...0.2.3]: https://github.com/MRdevX/license-lens/compare/0.2.2...0.2.3
 [0.2.2]: https://github.com/MRdevX/license-lens/compare/0.2.1...0.2.2
+[dd909f3]: https://github.com/MRdevX/license-lens/commit/dd909f3814e7574be480585674805615f8b93b28
 [99a3d39]: https://github.com/MRdevX/license-lens/commit/99a3d397289d81d187af1b828c8f2b0e15108db7
 [2405f8b]: https://github.com/MRdevX/license-lens/commit/2405f8bc85ab4d49836504c3ec9635cd8f3eb6b5
 [0.2.1...0.2.2]: https://github.com/MRdevX/license-lens/compare/0.2.1...0.2.2
