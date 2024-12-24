@@ -2,8 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [6.2.0+canary] - 2024-12-24
+
+- docs: update README to include information on checking libraries for commercial use ([379989a])
+
+Full Changelog: [6.1.0+canary...6.2.0+canary]
+
 ## [6.1.0+canary] - 2024-12-24
 
+- chore: release 6.1.0+canary ([8087caa])
 - docs: add JSDoc comments to main modules and functions for better documentation ([2d8bc98])
 
 Full Changelog: [6.0.2+canary...6.1.0+canary]
@@ -203,7 +210,11 @@ Full Changelog: [0.1.0...0.1.1]
 
 - docs: Add README.md for License Scout tool ([098c027])
 
+[6.2.0+canary]: https://github.com/MRdevX/license-scout/compare/6.1.0+canary...6.2.0+canary
+[379989a]: https://github.com/MRdevX/license-scout/commit/379989a364a142d23cf7864e86a15a762f37f390
+[6.1.0+canary...6.2.0+canary]: https://github.com/MRdevX/license-scout/compare/6.1.0+canary...6.2.0+canary
 [6.1.0+canary]: https://github.com/MRdevX/license-scout/compare/6.0.2+canary...6.1.0+canary
+[8087caa]: https://github.com/MRdevX/license-scout/commit/8087caa4bba46621bd3d1ab2246f74a635d4f1fc
 [2d8bc98]: https://github.com/MRdevX/license-scout/commit/2d8bc988158d498e51bd54097c5e50f103116373
 [6.0.2+canary...6.1.0+canary]: https://github.com/MRdevX/license-scout/compare/6.0.2+canary...6.1.0+canary
 [6.0.2+canary]: https://github.com/MRdevX/license-scout/compare/6.0.1+canary...6.0.2+canary
