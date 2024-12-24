@@ -1,4 +1,8 @@
 {
+  "name": "@mrdevx/license-scout",
+  "version": "0.1.0",
+  "license": "MIT",
+  "exports": "./license-scout.ts",
   "compilerOptions": {
     "allowJs": true,
     "lib": ["deno.window"]
