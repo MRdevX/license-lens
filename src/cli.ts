@@ -11,20 +11,54 @@ Usage:
   license-scout [options] [directory]
 
 Options:
-  -h, --help              Show this help message
-  -v, --version           Show version information
-  -o, --output <file>     Output file path (default: license-check-results.[txt|json])
-  -f, --format <format>   Output format (text|json) (default: text)
+  -h, --help                Show this help message
+  -v, --version            Show version information
+  -o, --output <file>      Output file path (default: license-check-results.[txt|json])
+  -f, --format <format>    Output format (text|json) (default: text)
+  -e, --exclude <dirs>     Directories to exclude (comma-separated)
+  --include-dev           Include dev dependencies in analysis
+  --fail-missing          Exit with error if licenses are missing
+  --exclude-licenses      Licenses to exclude from report (comma-separated)
+  --depth <number>        Maximum directory depth to scan (default: Infinity)
 
 Examples:
-  license-scout ./my-project
-  license-scout --format json ./my-project licenses.json
+  # Basic scan of current directory
+  license-scout
+
+  # Scan specific directory with JSON output
   license-scout -f json -o licenses.json ./my-project
-  `);
+
+  # Exclude multiple directories
+  license-scout -e "node_modules,dist,build"
+
+  # Include dev dependencies and fail on missing licenses
+  license-scout --include-dev --fail-missing
+
+  # Exclude specific licenses
+  license-scout --exclude-licenses "GPL-3.0,LGPL-3.0"
+
+  # Limit scan depth
+  license-scout --depth 2
+
+Output Formats:
+  text                    Human-readable text format (default)
+  json                    Machine-readable JSON format
+
+Environment Variables:
+  NO_COLOR               Disable colored output
+  DEBUG                  Enable debug logging
+
+For more information, visit: https://jsr.io/@mrdevx/license-scout
+`);
 };
 
 const showVersion = () => {
   console.log(`License Scout v${packageData.version}`);
+  console.log(`
+Runtime: Deno ${Deno.version.deno}
+V8: ${Deno.version.v8}
+TypeScript: ${Deno.version.typescript}
+`);
 };
 
 /**

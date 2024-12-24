@@ -30,57 +30,47 @@ After global installation, you can run the tool from anywhere using:
 license-scout [options] [directory]
 ```
 
-## Usage
-
-### Command Line Options
+## Command Line Interface
 
 ```bash
+License Scout v4.0.2
+A tool for scanning and analyzing license information in projects.
+
 Usage:
   license-scout [options] [directory]
 
 Options:
-  -h, --help              Show this help message
-  -v, --version           Show version information
-  -o, --output <file>     Output file path (default: license-check-results.[txt|json])
-  -f, --format <format>   Output format (text|json) (default: text)
+  -h, --help                Show this help message
+  -v, --version            Show version information
+  -o, --output <file>      Output file path (default: license-check-results.[txt|json])
+  -f, --format <format>    Output format (text|json) (default: text)
+  -e, --exclude <dirs>     Directories to exclude (comma-separated)
+  --include-dev           Include dev dependencies in analysis
+  --fail-missing          Exit with error if licenses are missing
+  --exclude-licenses      Licenses to exclude from report (comma-separated)
+  --depth <number>        Maximum directory depth to scan (default: Infinity)
 ```
 
 ### Examples
 
-**Show help:**
-
 ```bash
-license-scout --help
-```
-
-**Show version:**
-
-```bash
-license-scout --version
-```
-
-**Scan current directory:**
-
-```bash
+# Basic scan of current directory
 license-scout
-```
 
-**Scan specific directory:**
-
-```bash
-license-scout ./my-project
-```
-
-**Specify output file:**
-
-```bash
-license-scout -o licenses.txt ./my-project
-```
-
-**Generate JSON output:**
-
-```bash
+# Scan specific directory with JSON output
 license-scout -f json -o licenses.json ./my-project
+
+# Exclude multiple directories
+license-scout -e "node_modules,dist,build"
+
+# Include dev dependencies and fail on missing licenses
+license-scout --include-dev --fail-missing
+
+# Exclude specific licenses
+license-scout --exclude-licenses "GPL-3.0,LGPL-3.0"
+
+# Limit scan depth
+license-scout --depth 2
 ```
 
 ### Output Formats
