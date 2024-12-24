@@ -2,8 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.0.0+canary] - 2024-12-24
+
+- docs: Update README.md and CLI to enhance usage instructions and versioning ([e1c8f46])
+- docs: Enhance README.md and CLI output handling ([8259c26])
+
+Full Changelog: [3.0.0+canary...4.0.0+canary]
+
 ## [3.0.0+canary] - 2024-12-24
 
+- chore: release 3.0.0+canary ([bb034d8])
 - docs: Update README.md to include new installation instructions for package and global usage ([7e65466])
 - chore: release 2.0.2 ([5e90ef2])
 
@@ -119,7 +127,12 @@ Full Changelog: [0.1.0...0.1.1]
 
 - docs: Add README.md for License Scout tool ([098c027])
 
+[4.0.0+canary]: https://github.com/MRdevX/license-scout/compare/3.0.0+canary...4.0.0+canary
+[e1c8f46]: https://github.com/MRdevX/license-scout/commit/e1c8f46cb1794b5bb611710b3c75c4e264e78b12
+[8259c26]: https://github.com/MRdevX/license-scout/commit/8259c260e9988d9545ba2040c23afda592fe58d7
+[3.0.0+canary...4.0.0+canary]: https://github.com/MRdevX/license-scout/compare/3.0.0+canary...4.0.0+canary
 [3.0.0+canary]: https://github.com/MRdevX/license-scout/compare/2.0.2+canary...3.0.0+canary
+[bb034d8]: https://github.com/MRdevX/license-scout/commit/bb034d86a6f22860eb6f652d51fc96d63b18941d
 [7e65466]: https://github.com/MRdevX/license-scout/commit/7e6546636d009bf408bfe33ca7d1075abb64f004
 [5e90ef2]: https://github.com/MRdevX/license-scout/commit/5e90ef29f9b845ed4711af326817221f65a5fcda
 [2.0.2+canary...3.0.0+canary]: https://github.com/MRdevX/license-scout/compare/2.0.2+canary...3.0.0+canary
