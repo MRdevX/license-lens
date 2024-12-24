@@ -16,6 +16,12 @@
     }
   ],
   "versionFile": {
-    "file": "version.json"
+    "file": "version.json",
+    "patterns": [
+      {
+        "search": "\\+canary",
+        "replace": ""
+      }
+    ]
   }
 }
