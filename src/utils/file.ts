@@ -1,4 +1,3 @@
-import { green, yellow, bold, dim } from "https://deno.land/std@0.224.0/fmt/colors.ts";
 import type { ProjectInfo } from "../interfaces/index.ts";
 import { relative } from "node:path";
 
@@ -11,58 +10,55 @@ const formatTextOutput = (projects: ProjectInfo[]): string => {
 
   for (const project of projects) {
     lines.push(separator);
-    lines.push(bold(`Project: ${project.name}`));
-    lines.push(dim(`Version: ${project.version}`));
-    lines.push(dim(`Path: ${project.path}`));
+    lines.push(`Project: ${project.name}`);
+    lines.push(`Version: ${project.version}`);
+    lines.push(`Path: ${project.path}`);
 
     if (project.description) {
-      lines.push(dim(`Description: ${project.description}`));
+      lines.push(`Description: ${project.description}`);
     }
 
     if (project.author) {
-      lines.push(dim(`Author: ${project.author}`));
+      lines.push(`Author: ${project.author}`);
     }
 
     if (project.repository) {
-      lines.push(dim(`Repository: ${project.repository}`));
+      lines.push(`Repository: ${project.repository}`);
     }
 
     // License Information
     const isCommercialSafe = COMMERCIAL_SAFE_LICENSES.has(project.license || "");
-    const licenseColor = isCommercialSafe ? green : yellow;
+    const licenseStatus = isCommercialSafe ? "✓ Safe for commercial use" : "⚠ Review license terms";
     lines.push("");
-    lines.push(bold("License Information:"));
-    lines.push(`Package License: ${licenseColor(project.license || "Unknown")}`);
-    lines.push(
-      `Commercial Use: ${isCommercialSafe ? green("✓ Safe for commercial use") : yellow("⚠ Review license terms")}`
-    );
+    lines.push("License Information:");
+    lines.push(`Package License: ${project.license || "Unknown"}`);
+    lines.push(`Commercial Use: ${licenseStatus}`);
 
     // Dependencies
     if (project.dependencies && Object.keys(project.dependencies).length > 0) {
       lines.push("");
-      lines.push(bold("Dependencies:"));
+      lines.push("Dependencies:");
       for (const [dep, version] of Object.entries(project.dependencies)) {
-        lines.push(dim(`  ${dep}: ${version}`));
+        lines.push(`  ${dep}: ${version}`);
       }
     }
 
     // Dev Dependencies
     if (project.devDependencies && Object.keys(project.devDependencies).length > 0) {
       lines.push("");
-      lines.push(bold("Dev Dependencies:"));
+      lines.push("Dev Dependencies:");
       for (const [dep, version] of Object.entries(project.devDependencies)) {
-        lines.push(dim(`  ${dep}: ${version}`));
+        lines.push(`  ${dep}: ${version}`);
       }
     }
 
     // License Summary
     if (project.licenses) {
       lines.push("");
-      lines.push(bold("Dependencies License Summary:"));
+      lines.push("Dependencies License Summary:");
       const licenseCounts = parseLicenseSummary(project.licenses);
       for (const [license, count] of Object.entries(licenseCounts)) {
-        const isSafe = COMMERCIAL_SAFE_LICENSES.has(license);
-        const marker = isSafe ? green("✓") : yellow("⚠");
+        const marker = COMMERCIAL_SAFE_LICENSES.has(license) ? "✓" : "⚠";
         lines.push(`${marker} ${license}: ${count}`);
       }
     }
