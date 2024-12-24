@@ -31,7 +31,35 @@ license-scout [directory] [output-file]
 
 ## Usage
 
+### Command Line Options
+
+```bash
+License Scout v3.0.0
+A tool for scanning and analyzing license information in projects.
+
+Usage:
+  license-scout [options] [directory]
+
+Options:
+  -h, --help              Show this help message
+  -v, --version           Show version information
+  -o, --output <file>     Output file path (default: license-check-results.[txt|json])
+  -f, --format <format>   Output format (text|json) (default: text)
+```
+
 ### Basic Commands
+
+**Show help:**
+
+```bash
+license-scout --help
+```
+
+**Show version:**
+
+```bash
+license-scout --version
+```
 
 **Scan current directory with default output:**
 
