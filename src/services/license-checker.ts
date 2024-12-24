@@ -46,6 +46,7 @@ const analyzeProjects = async (projects: string[], rootDir: string): Promise<Pro
   return results;
 };
 
+/** Check licenses for all projects in the given directory */
 export const checkLicenses = async (
   rootDir: string,
   outputFile: string,

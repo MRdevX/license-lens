@@ -2,8 +2,14 @@
   "name": "@mrdevx/license-scout",
   "version": "0.3.1-0+canary",
   "license": "MIT",
+  "description": "A powerful tool for scanning and analyzing license information in your projects",
   "exports": "./license-scout.ts",
   "tasks": {
     "start": "deno run -A license-scout.ts"
+  },
+  "runtimes": {
+    "deno": ">=1.37",
+    "node": ">=18",
+    "bun": ">=1.0"
   }
 }

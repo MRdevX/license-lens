@@ -1,8 +1,10 @@
 import type { ProjectInfo } from "../interfaces/index.ts";
 
+/** Get the relative path from the root directory */
 export const getRelativePath = (fullPath: string, rootDir: string): string =>
   fullPath.replace(rootDir, "").replace(/^\//, "");
 
+/** Write the license check results to a file */
 export const writeResults = async (results: ProjectInfo[], outputFile: string, format: "text" | "json"): Promise<void> => {
   const content = format === "json" ? JSON.stringify(results, null, 2) : formatTextResults(results);
 
