@@ -2,11 +2,31 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.3.1-0+canary] - 2024-12-24
+
+### Features
+
+- feat: Refactor license-scout for modularity and improved functionality ([0903aaf])
+
+### Bug Fixes
+
+- fix: Update function signatures in license-checker and file utilities to include return types ([e04935e])
+
+### Others
+
+- chore: update dependencies and refactor import paths ([02954f9])
+
+Full Changelog: [0.3.0...0.3.1-0+canary]
+
 ## [0.3.0] - 2024-12-24
 
 ### Features
 
 - feat: Enhance license-scout with improved type safety and command handling ([bb04dd0])
+
+### Others
+
+- chore: release 0.3.0 ([0bce5f8])
 
 Full Changelog: [0.2.2...0.3.0]
 
@@ -56,8 +76,14 @@ Full Changelog: [0.1.0...0.1.1]
 
 - docs: Add README.md for License Scout tool ([098c027])
 
+[0.3.1-0+canary]: https://github.com/MRdevX/license-scout/compare/0.3.0...0.3.1-0+canary
+[0903aaf]: https://github.com/MRdevX/license-scout/commit/0903aafc1c3b432bf5e523342c0fe958467f31b2
+[e04935e]: https://github.com/MRdevX/license-scout/commit/e04935e89957cfd7bd9576262dca4209fc55164a
+[02954f9]: https://github.com/MRdevX/license-scout/commit/02954f9467790d7e8e38ba41a8bb575721f7ff10
+[0.3.0...0.3.1-0+canary]: https://github.com/MRdevX/license-scout/compare/0.3.0...0.3.1-0+canary
 [0.3.0]: https://github.com/MRdevX/license-scout/compare/0.2.2...0.3.0
 [bb04dd0]: https://github.com/MRdevX/license-scout/commit/bb04dd0cbfd86da9ca72c9c1054ec2d696f0f67f
+[0bce5f8]: https://github.com/MRdevX/license-scout/commit/0bce5f8b96c3401bff83d6c55d4c7ddc4c4e1f35
 [0.2.2...0.3.0]: https://github.com/MRdevX/license-scout/compare/0.2.2...0.3.0
 [0.2.2]: https://github.com/MRdevX/license-scout/compare/0.2.1...0.2.2
 [5cf4dac]: https://github.com/MRdevX/license-scout/commit/5cf4dacc122f27e55402e0c50593b5f3de490414

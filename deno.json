@@ -1,6 +1,6 @@
 {
   "name": "@mrdevx/license-scout",
-  "version": "0.3.0",
+  "version": "0.3.1-0+canary",
   "license": "MIT",
   "exports": "./license-scout.ts",
   "tasks": {
