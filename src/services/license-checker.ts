@@ -1,0 +1,63 @@
+import { basename, join } from "node:path";
+import type { ProjectInfo, PackageJson } from "../interfaces/index.ts";
+import { DEFAULT_CONFIG } from "../interfaces/index.ts";
+import { runCommand } from "../utils/command.ts";
+import { getRelativePath, writeResults } from "../utils/file.ts";
+import { findProjects } from "./project-finder.ts";
+
+const analyzeProjects = async (projects: string[], rootDir: string): Promise<ProjectInfo[]> => {
+  const results: ProjectInfo[] = [];
+
+  for (const [index, project] of projects.entries()) {
+    const projectName = basename(project);
+    console.log(`\n[${index + 1}/${projects.length}] Analyzing ${projectName}...`);
+
+    try {
+      const packageJsonPath = join(project, "package.json");
+      const packageJson: PackageJson = JSON.parse(await Deno.readTextFile(packageJsonPath));
+
+      const repoUrl =
+        typeof packageJson.repository === "string" ? packageJson.repository : packageJson.repository?.url || "";
+
+      results.push({
+        name: packageJson.name || projectName,
+        version: packageJson.version || "N/A",
+        path: getRelativePath(project, rootDir),
+        description: packageJson.description,
+        author: packageJson.author,
+        repository: repoUrl,
+        license: packageJson.license,
+      });
+
+      const licenseOutput = await runCommand("npx license-checker-rseidelsohn --summary", project);
+      results[results.length - 1].licenses = licenseOutput;
+    } catch (error) {
+      results.push({
+        name: projectName,
+        version: "N/A",
+        path: getRelativePath(project, rootDir),
+        licenses: `Error checking project: ${error}`,
+      });
+    }
+  }
+
+  return results;
+};
+
+export const checkLicenses = async (rootDir: string, outputFile: string, config: { outputFormat: "text" | "json" }) => {
+  try {
+    console.log("🔍 Starting license scan...");
+    const projects = await findProjects(rootDir, DEFAULT_CONFIG);
+
+    console.log(`📦 Found ${projects.length} projects to analyze`);
+    const results = await analyzeProjects(projects, rootDir);
+
+    console.log("\n✅ License scan complete!");
+    await writeResults(results, outputFile, config.outputFormat);
+    console.log(`License check results written to: ${outputFile}`);
+  } catch (error: unknown) {
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    console.error("❌ Error:", errorMessage);
+    Deno.exit(1);
+  }
+};
