@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [6.0.0+canary] - 2024-12-24
+
+### Features
+
+- feat: enhance license information output with detailed safety status for commercial use ([6df468c])
+- feat: simplify project information output by removing formatting and enhancing license summary ([de801bf])
+- feat: enhance project information output and license summary formatting ([f562d80])
+
+### Others
+
+- chore: release 5.0.0+canary ([db70252])
+
+Full Changelog: [5.0.0+canary...6.0.0+canary]
+
 ## [5.0.0+canary] - 2024-12-24
 
 ### Features
@@ -9,6 +23,10 @@ All notable changes to this project will be documented in this file.
 - feat: update CLI and documentation for enhanced license scanning options ([a3357c0])
 - feat: improve CLI documentation and refactor configuration options ([7f20905])
 - feat: enhance license checker CLI and configuration options ([0dac89d])
+
+### Others
+
+- chore: release 5.0.0+canary ([89b5e3d])
 
 Full Changelog: [4.0.2-0+canary...5.0.0+canary]
 
@@ -159,10 +177,17 @@ Full Changelog: [0.1.0...0.1.1]
 
 - docs: Add README.md for License Scout tool ([098c027])
 
+[6.0.0+canary]: https://github.com/MRdevX/license-scout/compare/5.0.0+canary...6.0.0+canary
+[6df468c]: https://github.com/MRdevX/license-scout/commit/6df468c96ac988484714d6ec3c1589b660990537
+[de801bf]: https://github.com/MRdevX/license-scout/commit/de801bfb43a59bd92ee26dd957214a36eaad36db
+[f562d80]: https://github.com/MRdevX/license-scout/commit/f562d80e2f153c8649b0f1d00e7e733f5df902c7
+[db70252]: https://github.com/MRdevX/license-scout/commit/db7025287ad1fe761318c47f1f90afcb4977793d
+[5.0.0+canary...6.0.0+canary]: https://github.com/MRdevX/license-scout/compare/5.0.0+canary...6.0.0+canary
 [5.0.0+canary]: https://github.com/MRdevX/license-scout/compare/4.0.2-0+canary...5.0.0+canary
 [a3357c0]: https://github.com/MRdevX/license-scout/commit/a3357c08ecdde208d430a25b133fc1bbc88abb23
 [7f20905]: https://github.com/MRdevX/license-scout/commit/7f2090567e66c3b4a29a913ef1094088ba6aa77c
 [0dac89d]: https://github.com/MRdevX/license-scout/commit/0dac89d7e68c413e9f4d91ed8a33c0f274c6892c
+[89b5e3d]: https://github.com/MRdevX/license-scout/commit/89b5e3de17706809e62d7102fdfae33170dabc53
 [4.0.2-0+canary...5.0.0+canary]: https://github.com/MRdevX/license-scout/compare/4.0.2-0+canary...5.0.0+canary
 [4.0.2-0+canary]: https://github.com/MRdevX/license-scout/compare/4.0.1+canary...4.0.2-0+canary
 [97c87f7]: https://github.com/MRdevX/license-scout/commit/97c87f78aeef278d7e4de013933cc64dfc130d37
