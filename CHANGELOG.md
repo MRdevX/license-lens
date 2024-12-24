@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.0.2-0+canary] - 2024-12-24
+
+- chore: release 4.0.1 ([5e53086])
+- refactor: update CLI to use package version from deno.json ([5c2696e])
+
+Full Changelog: [4.0.1+canary...4.0.2-0+canary]
+
 ## [4.0.1+canary] - 2024-12-24
 
 ### Bug Fixes
@@ -10,6 +17,7 @@ All notable changes to this project will be documented in this file.
 
 ### Others
 
+- chore: release 4.0.1+canary ([4d4ab14])
 - docs: Update README.md to enhance command usage and output format details ([d0b6254])
 
 Full Changelog: [4.0.0+canary...4.0.1+canary]
@@ -140,8 +148,13 @@ Full Changelog: [0.1.0...0.1.1]
 
 - docs: Add README.md for License Scout tool ([098c027])
 
+[4.0.2-0+canary]: https://github.com/MRdevX/license-scout/compare/4.0.1+canary...4.0.2-0+canary
+[5e53086]: https://github.com/MRdevX/license-scout/commit/5e5308684a784807f1567c2b2112a88fd854f041
+[5c2696e]: https://github.com/MRdevX/license-scout/commit/5c2696e9111c3302cccf026674c7bed236c008f3
+[4.0.1+canary...4.0.2-0+canary]: https://github.com/MRdevX/license-scout/compare/4.0.1+canary...4.0.2-0+canary
 [4.0.1+canary]: https://github.com/MRdevX/license-scout/compare/4.0.0+canary...4.0.1+canary
 [7d10d27]: https://github.com/MRdevX/license-scout/commit/7d10d275ba57ee5afa661dcf48ca0f7fc963a7ff
+[4d4ab14]: https://github.com/MRdevX/license-scout/commit/4d4ab1474d19561440015fea26b1e37ce27c161a
 [d0b6254]: https://github.com/MRdevX/license-scout/commit/d0b6254bdc4e7d2a5d95bc8a5158f085557acd17
 [4.0.0+canary...4.0.1+canary]: https://github.com/MRdevX/license-scout/compare/4.0.0+canary...4.0.1+canary
 [4.0.0+canary]: https://github.com/MRdevX/license-scout/compare/3.0.0+canary...4.0.0+canary
