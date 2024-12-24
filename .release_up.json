@@ -3,7 +3,7 @@
     "file": "CHANGELOG.md"
   },
   "github": {
-    "release": false
+    "release": true
   },
   "regex": [
     {
