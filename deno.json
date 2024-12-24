@@ -3,8 +3,7 @@
   "version": "0.1.0",
   "license": "MIT",
   "exports": "./license-scout.ts",
-  "compilerOptions": {
-    "allowJs": true,
-    "lib": ["deno.window"]
+  "tasks": {
+    "start": "deno run -A license-scout.ts"
   }
 }
