@@ -9,6 +9,7 @@ A powerful tool for scanning and analyzing license information in your projects.
 - Generates detailed license reports
 - Easy to use command-line interface
 - Supports both text and JSON output formats
+- Checks libraries and dependencies for commercial use
 
 ## Installation
 
@@ -92,7 +93,14 @@ The tool needs the following permissions to run:
 
 You can combine these using the `-A` flag for all permissions.
 
-## Output Example
+## Checking Libraries and Dependencies for Commercial Use
+
+License Scout provides detailed information about the licenses of your project's dependencies, including whether they are safe for commercial use. The tool categorizes licenses into two main categories:
+
+Safe for commercial use: These licenses are generally considered safe for commercial use.
+Review license terms: These licenses may have restrictions or conditions that require further review before using them in a commercial project.
+
+## Example Output
 
 ```text
 Project: my-awesome-project
@@ -102,6 +110,7 @@ Description: An awesome project
 Author: John Doe
 Repository: https://github.com/johndoe/my-awesome-project
 Package License: MIT
+Commercial Use: ✓ Safe for commercial use
 
 Dependencies:
   express: ^4.17.1
@@ -111,12 +120,17 @@ Dev Dependencies:
   typescript: ^4.5.4
   jest: ^27.4.7
 
-Dependencies Licenses:
-MIT: 45
-ISC: 12
-Apache-2.0: 5
-=====================================
+Dependencies License Summary:
+✓ ├─ MIT: 45 (Safe for commercial use)
+✓ ├─ ISC: 12 (Safe for commercial use)
+✓ ├─ Apache-2.0: 5 (Safe for commercial use)
+⚠ ├─ BlueOak-1.0.0: 3 (Review license terms)
+⚠ ├─ CC-BY-4.0: 2 (Review license terms)
+⚠ ├─ Unlicense: 2 (Review license terms)
+✓ └─ 0BSD: 1 (Safe for commercial use)
 ```
+
+In the example above, the tool provides a summary of the licenses for all dependencies, indicating whether each license is safe for commercial use or requires further review.
 
 ## API Usage
 
