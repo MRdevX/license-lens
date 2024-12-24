@@ -2,8 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.2.1] - 2024-12-24
+
+- chore: update .gitignore to include license check results ([d451f93])
+
+Full Changelog: [0.2.0...0.2.1]
+
 ## [0.2.0] - 2024-12-24
 
+- chore: release 0.2.0 ([2d84b6d])
 - chore: rename project from license-scout to license-lens ([81cba9d])
 
 Full Changelog: [0.1.0...0.2.0]
@@ -76,7 +83,11 @@ Full Changelog: [0.1.0...0.2.0]
 - refactor: Update deno.json to remove compiler options and add start task; create license-check-results.txt ([8b68c2a])
 - docs: Add README.md for License Scout tool ([098c027])
 
+[0.2.1]: https://github.com/MRdevX/license-scout/compare/0.2.0...0.2.1
+[d451f93]: https://github.com/MRdevX/license-scout/commit/d451f937ec13c50a3057b2dc771c4f868ea993e2
+[0.2.0...0.2.1]: https://github.com/MRdevX/license-scout/compare/0.2.0...0.2.1
 [0.2.0]: https://github.com/MRdevX/license-scout/compare/0.1.0...0.2.0
+[2d84b6d]: https://github.com/MRdevX/license-scout/commit/2d84b6d45788fe64d6107365ebc0ca45c317314b
 [81cba9d]: https://github.com/MRdevX/license-scout/commit/81cba9d3fbe33159108b46ed0e34da01966b7703
 [0.1.0...0.2.0]: https://github.com/MRdevX/license-scout/compare/0.1.0...0.2.0
 [0.1.0]: https://github.com/MRdevX/license-scout/compare/8b2dce4067bc73c1eb96290962c0d1fb193ca341...0.1.0
