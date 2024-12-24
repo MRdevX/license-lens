@@ -1,11 +1,11 @@
 {
-  "name": "@mrdevx/license-scout",
+  "name": "@mrdevx/license-lens",
   "version": "0.1.0",
   "license": "MIT",
   "description": "A powerful tool for scanning and analyzing license information in your projects",
-  "exports": "./license-scout.ts",
+  "exports": "./license-lens.ts",
   "tasks": {
-    "start": "deno run -A license-scout.ts"
+    "start": "deno run -A license-lens.ts"
   },
   "runtimes": {
     "deno": ">=1.37",

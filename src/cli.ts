@@ -11,7 +11,7 @@ License Scout v${packageData.version}
 A tool for scanning and analyzing license information in projects.
 
 Usage: 
-  license-scout [options] [directory]
+  license-lens [options] [directory]
 
 Options:
   -h, --help                Show this help message
@@ -26,22 +26,22 @@ Options:
 
 Examples:
   # Basic scan of current directory
-  license-scout
+  license-lens
 
   # Scan specific directory with JSON output
-  license-scout -f json -o licenses.json ./my-project
+  license-lens -f json -o licenses.json ./my-project
 
   # Exclude multiple directories
-  license-scout -e "node_modules,dist,build"
+  license-lens -e "node_modules,dist,build"
 
   # Include dev dependencies and fail on missing licenses
-  license-scout --include-dev --fail-missing
+  license-lens --include-dev --fail-missing
 
   # Exclude specific licenses
-  license-scout --exclude-licenses "GPL-3.0,LGPL-3.0"
+  license-lens --exclude-licenses "GPL-3.0,LGPL-3.0"
 
   # Limit scan depth
-  license-scout --depth 2
+  license-lens --depth 2
 
 Output Formats:
   text                    Human-readable text format (default)
@@ -51,7 +51,7 @@ Environment Variables:
   NO_COLOR               Disable colored output
   DEBUG                  Enable debug logging
 
-For more information, visit: https://jsr.io/@mrdevx/license-scout
+For more information, visit: https://jsr.io/@mrdevx/license-lens
 `);
 };
 
@@ -68,16 +68,16 @@ TypeScript: ${Deno.version.typescript}
 };
 
 /**
- * Main CLI entry point for license-scout.
+ * Main CLI entry point for license-lens.
  * 
  * @example Basic usage
  * ```ts
- * license-scout ./my-project
+ * license-lens ./my-project
  * ```
  * 
  * @example With options
  * ```ts
- * license-scout -f json -o licenses.json ./my-project
+ * license-lens -f json -o licenses.json ./my-project
  * ```
  */
 export const main = async () => {

@@ -16,19 +16,19 @@ A powerful tool for scanning and analyzing license information in your projects.
 ### As a Package Dependency
 
 ```bash
-deno add jsr:@mrdevx/license-scout
+deno add jsr:@mrdevx/license-lens
 ```
 
 ### Global Installation
 
 ```bash
-deno install --global --force -A -n license-scout jsr:@mrdevx/license-scout
+deno install --global --force -A -n license-lens jsr:@mrdevx/license-lens
 ```
 
 After global installation, you can run the tool from anywhere using:
 
 ```bash
-license-scout [options] [directory]
+license-lens [options] [directory]
 ```
 
 ## Command Line Interface
@@ -38,7 +38,7 @@ License Scout
 A tool for scanning and analyzing license information in projects.
 
 Usage:
-  license-scout [options] [directory]
+  license-lens [options] [directory]
 
 Options:
   -h, --help                Show this help message
@@ -56,22 +56,22 @@ Options:
 
 ```bash
 # Basic scan of current directory
-license-scout
+license-lens
 
 # Scan specific directory with JSON output
-license-scout -f json -o licenses.json ./my-project
+license-lens -f json -o licenses.json ./my-project
 
 # Exclude multiple directories
-license-scout -e "node_modules,dist,build"
+license-lens -e "node_modules,dist,build"
 
 # Include dev dependencies and fail on missing licenses
-license-scout --include-dev --fail-missing
+license-lens --include-dev --fail-missing
 
 # Exclude specific licenses
-license-scout --exclude-licenses "GPL-3.0,LGPL-3.0"
+license-lens --exclude-licenses "GPL-3.0,LGPL-3.0"
 
 # Limit scan depth
-license-scout --depth 2
+license-lens --depth 2
 ```
 
 ### Output Formats
@@ -137,7 +137,7 @@ In the example above, the tool provides a summary of the licenses for all depend
 You can also use License Scout programmatically:
 
 ```typescript
-import { checkLicenses } from "@mrdevx/license-scout";
+import { checkLicenses } from "@mrdevx/license-lens";
 
 await checkLicenses("./projects", "licenses.txt", { outputFormat: "json" });
 ```
