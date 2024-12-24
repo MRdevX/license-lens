@@ -74,6 +74,10 @@ export const checkLicenses = async (
   config: { outputFormat: "text" | "json" }
 ): Promise<void> => {
   try {
+    // Ensure correct file extension
+    const fileExtension = config.outputFormat === "json" ? ".json" : ".txt";
+    const finalOutputFile = outputFile.endsWith(fileExtension) ? outputFile : `${outputFile}${fileExtension}`;
+
     console.log("🔍 Starting license scan...");
     const projects = await findProjects(rootDir, DEFAULT_CONFIG);
 
@@ -81,8 +85,8 @@ export const checkLicenses = async (
     const results = await analyzeProjects(projects, rootDir);
 
     console.log("\n✅ License scan complete!");
-    await writeResults(results, outputFile, config.outputFormat);
-    console.log(`License check results written to: ${outputFile}`);
+    await writeResults(results, finalOutputFile, config.outputFormat);
+    console.log(`License check results written to: ${finalOutputFile}`);
   } catch (error: unknown) {
     const errorMessage = error instanceof Error ? error.message : String(error);
     console.error("❌ Error:", errorMessage);

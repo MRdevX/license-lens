@@ -55,12 +55,22 @@ deno run -A license-scout.ts ./my-project licenses.txt
 
 The tool supports two output formats:
 
-- **Text** (default): Human-readable format
-- **JSON**: Machine-readable format
+- **Text** (default): Human-readable format (`.txt`)
+- **JSON**: Machine-readable format (`.json`)
+
+**Text format example:**
 
 ```bash
-deno run -A license-scout.ts --format json ./my-project
+deno run -A license-scout.ts ./my-project licenses.txt
 ```
+
+**JSON format example:**
+
+```bash
+deno run -A license-scout.ts --format json ./my-project licenses.json
+```
+
+> **Note:** When using `--format json`, it's recommended to use the `.json` file extension for better compatibility with other tools.
 
 ### Required Permissions
 

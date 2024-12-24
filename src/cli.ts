@@ -7,7 +7,7 @@ export const main = async () => {
     boolean: ["help"],
     default: {
       format: "text",
-      output: "license-check-results.txt",
+      output: "license-check-results",
     },
   });
 
@@ -16,9 +16,13 @@ export const main = async () => {
 Usage: license-scout [options] [directory]
 
 Options:
-  --output    Output file path (default: license-check-results.txt)
+  --output    Output file path (default: license-check-results.[txt|json])
   --format    Output format (text|json) (default: text)
   --help      Show this help message
+
+Examples:
+  license-scout ./my-project
+  license-scout --format json ./my-project licenses.json
     `);
     Deno.exit(0);
   }
