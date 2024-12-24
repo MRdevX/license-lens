@@ -12,7 +12,7 @@ A powerful tool for scanning and analyzing license information in your projects.
 ## Installation
 
 ```bash
-deno install -A -n license-scout https://raw.githubusercontent.com/mrdevx/license-scout/main/license-scout.ts
+deno add jsr:@mrdevx/license-scout
 ```
 
 ## Usage
