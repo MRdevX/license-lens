@@ -6,6 +6,12 @@ export interface Config {
   outputFormat: "text" | "json";
   /** Maximum depth to scan for projects */
   depth?: number;
+  /** Fail on missing licenses */
+  failOnMissing?: boolean;
+  /** Include development dependencies */
+  includeDev?: boolean;
+  /** Exclude specific licenses */
+  excludeLicenses?: string[];
 }
 
 /** Default configuration settings */

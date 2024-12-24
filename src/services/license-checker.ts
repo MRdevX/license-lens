@@ -4,6 +4,7 @@ import { DEFAULT_CONFIG } from "../interfaces/index.ts";
 import { runCommand } from "../utils/command.ts";
 import { getRelativePath, writeResults } from "../utils/file.ts";
 import { findProjects } from "./project-finder.ts";
+import { LicenseCheckerError } from "../utils/errors.ts";
 
 /**
  * Analyzes projects for license information
@@ -16,16 +17,26 @@ import { findProjects } from "./project-finder.ts";
  * @param rootDir Root directory for relative path calculation
  * @returns Array of project information including licenses
  */
-const analyzeProjects = async (projects: string[], rootDir: string): Promise<ProjectInfo[]> => {
+const analyzeProjects = async (
+  projects: string[],
+  rootDir: string,
+  onProgress?: (info: ProgressInfo) => void
+): Promise<ProjectInfo[]> => {
   const results: ProjectInfo[] = [];
 
   for (const [index, project] of projects.entries()) {
     const projectName = basename(project);
     console.log(`\n[${index + 1}/${projects.length}] Analyzing ${projectName}...`);
 
+    onProgress?.({
+      current: index + 1,
+      total: projects.length,
+      projectName,
+    });
+
     try {
       const packageJsonPath = join(project, "package.json");
-      const packageJson: PackageJson = JSON.parse(await Deno.readTextFile(packageJsonPath));
+      const packageJson = await readPackageJson(packageJsonPath);
 
       const repoUrl =
         typeof packageJson.repository === "string" ? packageJson.repository : packageJson.repository?.url || "";
@@ -68,10 +79,17 @@ const analyzeProjects = async (projects: string[], rootDir: string): Promise<Pro
  * await checkLicenses("./projects", "licenses.txt", { outputFormat: "json" });
  * ```
  */
+export interface ProgressInfo {
+  current: number;
+  total: number;
+  projectName: string;
+}
+
 export const checkLicenses = async (
   rootDir: string,
   outputFile: string,
-  config: { outputFormat: "text" | "json" }
+  config: { outputFormat: "text" | "json" },
+  onProgress?: (info: ProgressInfo) => void
 ): Promise<void> => {
   try {
     // Ensure correct file extension
@@ -82,7 +100,7 @@ export const checkLicenses = async (
     const projects = await findProjects(rootDir, DEFAULT_CONFIG);
 
     console.log(`📦 Found ${projects.length} projects to analyze`);
-    const results = await analyzeProjects(projects, rootDir);
+    const results = await analyzeProjects(projects, rootDir, onProgress);
 
     console.log("\n✅ License scan complete!");
     await writeResults(results, finalOutputFile, config.outputFormat);
@@ -91,5 +109,17 @@ export const checkLicenses = async (
     const errorMessage = error instanceof Error ? error.message : String(error);
     console.error("❌ Error:", errorMessage);
     Deno.exit(1);
+  }
+};
+
+const readPackageJson = async (path: string): Promise<PackageJson> => {
+  try {
+    const content = await Deno.readTextFile(path);
+    return JSON.parse(content);
+  } catch (error) {
+    if (error instanceof Deno.errors.NotFound) {
+      throw new LicenseCheckerError("package.json not found", "PKG_NOT_FOUND");
+    }
+    throw error;
   }
 };

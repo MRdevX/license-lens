@@ -29,13 +29,14 @@ const showVersion = () => {
 
 export const main = async () => {
   const flags = parseArgs(Deno.args, {
-    string: ["output", "format"],
-    boolean: ["help", "version"],
+    string: ["output", "format", "exclude"],
+    boolean: ["help", "version", "include-dev", "fail-on-missing"],
     alias: {
       h: "help",
       v: "version",
       o: "output",
       f: "format",
+      e: "exclude",
     },
     default: {
       format: "text",
