@@ -1,10 +1,10 @@
 import { parseArgs } from "jsr:@std/cli@1/parse-args";
 import { checkLicenses } from "./services/license-checker.ts";
-import { version } from "../version.json" with { type: "json" };
+import packageData from "../deno.json" with { type: "json" };
 
 const showHelp = () => {
   console.log(`
-License Scout v${version}
+License Scout v${packageData.version}
 A tool for scanning and analyzing license information in projects.
 
 Usage: 
@@ -24,7 +24,7 @@ Examples:
 };
 
 const showVersion = () => {
-  console.log(`License Scout v${version}`);
+  console.log(`License Scout v${packageData.version}`);
 };
 
 export const main = async () => {
