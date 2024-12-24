@@ -2,8 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [6.0.2+canary] - 2024-12-24
+
+### Bug Fixes
+
+- fix: update version file configuration to remove '+canary' from version patterns ([51eca96])
+
+Full Changelog: [6.0.1+canary...6.0.2+canary]
+
 ## [6.0.1+canary] - 2024-12-24
 
+- chore: release 6.0.1+canary ([178daba])
 - chore: update version to 6.0.0 and configure changelog and version file paths ([8bc354b])
 
 Full Changelog: [6.0.0+canary...6.0.1+canary]
@@ -184,7 +193,11 @@ Full Changelog: [0.1.0...0.1.1]
 
 - docs: Add README.md for License Scout tool ([098c027])
 
+[6.0.2+canary]: https://github.com/MRdevX/license-scout/compare/6.0.1+canary...6.0.2+canary
+[51eca96]: https://github.com/MRdevX/license-scout/commit/51eca96b473e26d6894a08dbbafc6b7986c2814d
+[6.0.1+canary...6.0.2+canary]: https://github.com/MRdevX/license-scout/compare/6.0.1+canary...6.0.2+canary
 [6.0.1+canary]: https://github.com/MRdevX/license-scout/compare/6.0.0+canary...6.0.1+canary
+[178daba]: https://github.com/MRdevX/license-scout/commit/178dabae5bb71338f72e77407f0637bc1c74cd9d
 [8bc354b]: https://github.com/MRdevX/license-scout/commit/8bc354b04e04b41c7f788fa965e2221f7bf89512
 [6.0.0+canary...6.0.1+canary]: https://github.com/MRdevX/license-scout/compare/6.0.0+canary...6.0.1+canary
 [6.0.0+canary]: https://github.com/MRdevX/license-scout/compare/5.0.0+canary...6.0.0+canary
