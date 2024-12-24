@@ -33,7 +33,7 @@ license-scout [options] [directory]
 ## Command Line Interface
 
 ```bash
-License Scout v4.0.2
+License Scout
 A tool for scanning and analyzing license information in projects.
 
 Usage:

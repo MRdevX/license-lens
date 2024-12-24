@@ -2,8 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [5.0.0+canary] - 2024-12-24
+
+### Features
+
+- feat: update CLI and documentation for enhanced license scanning options ([a3357c0])
+- feat: improve CLI documentation and refactor configuration options ([7f20905])
+- feat: enhance license checker CLI and configuration options ([0dac89d])
+
+Full Changelog: [4.0.2-0+canary...5.0.0+canary]
+
 ## [4.0.2-0+canary] - 2024-12-24
 
+- chore: release 4.0.2-0+canary ([97c87f7])
 - chore: release 4.0.1 ([5e53086])
 - refactor: update CLI to use package version from deno.json ([5c2696e])
 
@@ -148,7 +159,13 @@ Full Changelog: [0.1.0...0.1.1]
 
 - docs: Add README.md for License Scout tool ([098c027])
 
+[5.0.0+canary]: https://github.com/MRdevX/license-scout/compare/4.0.2-0+canary...5.0.0+canary
+[a3357c0]: https://github.com/MRdevX/license-scout/commit/a3357c08ecdde208d430a25b133fc1bbc88abb23
+[7f20905]: https://github.com/MRdevX/license-scout/commit/7f2090567e66c3b4a29a913ef1094088ba6aa77c
+[0dac89d]: https://github.com/MRdevX/license-scout/commit/0dac89d7e68c413e9f4d91ed8a33c0f274c6892c
+[4.0.2-0+canary...5.0.0+canary]: https://github.com/MRdevX/license-scout/compare/4.0.2-0+canary...5.0.0+canary
 [4.0.2-0+canary]: https://github.com/MRdevX/license-scout/compare/4.0.1+canary...4.0.2-0+canary
+[97c87f7]: https://github.com/MRdevX/license-scout/commit/97c87f78aeef278d7e4de013933cc64dfc130d37
 [5e53086]: https://github.com/MRdevX/license-scout/commit/5e5308684a784807f1567c2b2112a88fd854f041
 [5c2696e]: https://github.com/MRdevX/license-scout/commit/5c2696e9111c3302cccf026674c7bed236c008f3
 [4.0.1+canary...4.0.2-0+canary]: https://github.com/MRdevX/license-scout/compare/4.0.1+canary...4.0.2-0+canary
