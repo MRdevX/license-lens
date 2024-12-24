@@ -3,7 +3,7 @@
     "file": "CHANGELOG.md"
   },
   "github": {
-    "release": true
+    "release": false
   },
   "regex": [
     {
@@ -15,13 +15,5 @@
       "patterns": ["(?<=\"version\": \")(.*)(?=\",)"]
     }
   ],
-  "versionFile": {
-    "file": "version.json",
-    "patterns": [
-      {
-        "search": "\\+canary",
-        "replace": ""
-      }
-    ]
-  }
+  "versionFile": {}
 }
