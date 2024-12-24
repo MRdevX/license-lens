@@ -5,6 +5,17 @@ import { runCommand } from "../utils/command.ts";
 import { getRelativePath, writeResults } from "../utils/file.ts";
 import { findProjects } from "./project-finder.ts";
 
+/**
+ * Analyzes projects for license information
+ * @module
+ */
+
+/**
+ * Analyzes a list of projects and extracts their license information
+ * @param projects Array of project paths to analyze
+ * @param rootDir Root directory for relative path calculation
+ * @returns Array of project information including licenses
+ */
 const analyzeProjects = async (projects: string[], rootDir: string): Promise<ProjectInfo[]> => {
   const results: ProjectInfo[] = [];
 
@@ -46,7 +57,17 @@ const analyzeProjects = async (projects: string[], rootDir: string): Promise<Pro
   return results;
 };
 
-/** Check licenses for all projects in the given directory */
+/**
+ * Main function to check licenses in a directory
+ * @param rootDir Directory to scan for projects
+ * @param outputFile Path to write the results
+ * @param config Configuration options for the scan
+ *
+ * @example
+ * ```ts
+ * await checkLicenses("./projects", "licenses.txt", { outputFormat: "json" });
+ * ```
+ */
 export const checkLicenses = async (
   rootDir: string,
   outputFile: string,

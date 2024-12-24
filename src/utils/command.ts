@@ -1,3 +1,15 @@
+/**
+ * Executes a shell command and returns its output
+ * @param command Command to execute
+ * @param cwd Working directory for command execution
+ * @returns Promise resolving to command output
+ * @throws Error if command execution fails
+ *
+ * @example
+ * ```ts
+ * const output = await runCommand("npm list", "./project");
+ * ```
+ */
 export const runCommand = async (command: string, cwd: string): Promise<string> => {
   try {
     const [cmd, ...args] = command.split(" ");

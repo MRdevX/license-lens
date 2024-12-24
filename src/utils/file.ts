@@ -4,13 +4,28 @@ import type { ProjectInfo } from "../interfaces/index.ts";
 export const getRelativePath = (fullPath: string, rootDir: string): string =>
   fullPath.replace(rootDir, "").replace(/^\//, "");
 
-/** Write the license check results to a file */
+/**
+ * Formats and writes license check results to a file
+ * @param results Array of project information to write
+ * @param outputFile Path to write the results
+ * @param format Output format (text or JSON)
+ *
+ * @example
+ * ```ts
+ * await writeResults(results, "licenses.txt", "text");
+ * ```
+ */
 export const writeResults = async (results: ProjectInfo[], outputFile: string, format: "text" | "json"): Promise<void> => {
   const content = format === "json" ? JSON.stringify(results, null, 2) : formatTextResults(results);
 
   await Deno.writeTextFile(outputFile, content);
 };
 
+/**
+ * Formats dependencies into a readable string
+ * @param deps Record of dependencies and their versions
+ * @returns Formatted string of dependencies
+ */
 const formatDependencies = (deps?: Record<string, string>): string => {
   if (!deps || Object.keys(deps).length === 0) return "";
   return Object.entries(deps)
