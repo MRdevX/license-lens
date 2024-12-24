@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [6.0.1+canary] - 2024-12-24
+
+- chore: update version to 6.0.0 and configure changelog and version file paths ([8bc354b])
+
+Full Changelog: [6.0.0+canary...6.0.1+canary]
+
 ## [6.0.0+canary] - 2024-12-24
 
 ### Features
@@ -12,6 +18,7 @@ All notable changes to this project will be documented in this file.
 
 ### Others
 
+- chore: release 6.0.0+canary ([ba8f592])
 - chore: release 5.0.0+canary ([db70252])
 
 Full Changelog: [5.0.0+canary...6.0.0+canary]
@@ -177,10 +184,14 @@ Full Changelog: [0.1.0...0.1.1]
 
 - docs: Add README.md for License Scout tool ([098c027])
 
+[6.0.1+canary]: https://github.com/MRdevX/license-scout/compare/6.0.0+canary...6.0.1+canary
+[8bc354b]: https://github.com/MRdevX/license-scout/commit/8bc354b04e04b41c7f788fa965e2221f7bf89512
+[6.0.0+canary...6.0.1+canary]: https://github.com/MRdevX/license-scout/compare/6.0.0+canary...6.0.1+canary
 [6.0.0+canary]: https://github.com/MRdevX/license-scout/compare/5.0.0+canary...6.0.0+canary
 [6df468c]: https://github.com/MRdevX/license-scout/commit/6df468c96ac988484714d6ec3c1589b660990537
 [de801bf]: https://github.com/MRdevX/license-scout/commit/de801bfb43a59bd92ee26dd957214a36eaad36db
 [f562d80]: https://github.com/MRdevX/license-scout/commit/f562d80e2f153c8649b0f1d00e7e733f5df902c7
+[ba8f592]: https://github.com/MRdevX/license-scout/commit/ba8f5922d9f83b126bba8dda7df321ea38ee26c5
 [db70252]: https://github.com/MRdevX/license-scout/commit/db7025287ad1fe761318c47f1f90afcb4977793d
 [5.0.0+canary...6.0.0+canary]: https://github.com/MRdevX/license-scout/compare/5.0.0+canary...6.0.0+canary
 [5.0.0+canary]: https://github.com/MRdevX/license-scout/compare/4.0.2-0+canary...5.0.0+canary
