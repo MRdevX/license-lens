@@ -1,6 +1,6 @@
 {
   "name": "@mrdevx/license-scout",
-  "version": "2.0.0+canary",
+  "version": "2.0.1",
   "license": "MIT",
   "description": "A powerful tool for scanning and analyzing license information in your projects",
   "exports": "./license-scout.ts",
