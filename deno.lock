@@ -1,7 +1,13 @@
 {
   "version": "4",
   "specifiers": {
+    "jsr:@std/cli@1": "1.0.9",
     "npm:@types/node@*": "22.5.4"
+  },
+  "jsr": {
+    "@std/cli@1.0.9": {
+      "integrity": "557e5865af000efbf3f737dcfea5b8ab86453594f4a9cd8d08c9fa83d8e3f3bc"
+    }
   },
   "npm": {
     "@types/node@22.5.4": {

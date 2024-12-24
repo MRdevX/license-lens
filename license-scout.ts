@@ -1,5 +1,5 @@
 import { join, basename } from "node:path";
-import { parseArgs } from "https://deno.land/std/cli/parse_args.ts";
+import { parseArgs } from "jsr:@std/cli@1/parse-args";
 
 /**
  * Add interfaces for better type safety
