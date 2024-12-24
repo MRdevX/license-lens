@@ -2,8 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [6.2.2] - 2024-12-24
+
+- chore: update publish command to use deno ([6c8c681])
+
+Full Changelog: [6.2.1...6.2.2]
+
+## [6.2.1] - 2024-12-24
+
+- chore: bump version to 6.2.1 ([686415e])
+
+Full Changelog: [6.2.0+canary...6.2.1]
+
 ## [6.2.0+canary] - 2024-12-24
 
+- chore: release 6.2.0+canary ([87e2d20])
 - docs: update README to include information on checking libraries for commercial use ([379989a])
 
 Full Changelog: [6.1.0+canary...6.2.0+canary]
@@ -210,7 +223,14 @@ Full Changelog: [0.1.0...0.1.1]
 
 - docs: Add README.md for License Scout tool ([098c027])
 
+[6.2.2]: https://github.com/MRdevX/license-scout/compare/6.2.1...6.2.2
+[6c8c681]: https://github.com/MRdevX/license-scout/commit/6c8c6811d45c7a581b677bf4dbdca65e1ef929ca
+[6.2.1...6.2.2]: https://github.com/MRdevX/license-scout/compare/6.2.1...6.2.2
+[6.2.1]: https://github.com/MRdevX/license-scout/compare/6.2.0+canary...6.2.1
+[686415e]: https://github.com/MRdevX/license-scout/commit/686415e7a2939412b31f93939f5c4da82bf1f793
+[6.2.0+canary...6.2.1]: https://github.com/MRdevX/license-scout/compare/6.2.0+canary...6.2.1
 [6.2.0+canary]: https://github.com/MRdevX/license-scout/compare/6.1.0+canary...6.2.0+canary
+[87e2d20]: https://github.com/MRdevX/license-scout/commit/87e2d20ee5054148ce8ba76f3afcf917d3b83d4e
 [379989a]: https://github.com/MRdevX/license-scout/commit/379989a364a142d23cf7864e86a15a762f37f390
 [6.1.0+canary...6.2.0+canary]: https://github.com/MRdevX/license-scout/compare/6.1.0+canary...6.2.0+canary
 [6.1.0+canary]: https://github.com/MRdevX/license-scout/compare/6.0.2+canary...6.1.0+canary
