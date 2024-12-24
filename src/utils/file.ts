@@ -27,7 +27,9 @@ const formatTextOutput = (projects: ProjectInfo[]): string => {
     }
 
     // License Information
-    const isCommercialSafe = COMMERCIAL_SAFE_LICENSES.has(project.license || "");
+    const isCommercialSafe = Array.from(COMMERCIAL_SAFE_LICENSES).some((safeLicense) =>
+      (project.license || "").includes(safeLicense)
+    );
     const licenseStatus = isCommercialSafe ? "✓ Safe for commercial use" : "⚠ Review license terms";
     lines.push("");
     lines.push("License Information:");
@@ -58,8 +60,10 @@ const formatTextOutput = (projects: ProjectInfo[]): string => {
       lines.push("Dependencies License Summary:");
       const licenseCounts = parseLicenseSummary(project.licenses);
       for (const [license, count] of Object.entries(licenseCounts)) {
-        const marker = COMMERCIAL_SAFE_LICENSES.has(license) ? "✓" : "⚠";
-        lines.push(`${marker} ${license}: ${count}`);
+        const isSafe = Array.from(COMMERCIAL_SAFE_LICENSES).some((safeLicense) => license.includes(safeLicense));
+        const marker = isSafe ? "✓" : "⚠";
+        const commercialUseStatus = isSafe ? "Safe for commercial use" : "Review license terms";
+        lines.push(`${marker} ${license}: ${count} (${commercialUseStatus})`);
       }
     }
 
