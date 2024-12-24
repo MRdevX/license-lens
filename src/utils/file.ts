@@ -4,6 +4,12 @@ import { relative } from "node:path";
 // Define commercially safe licenses
 const COMMERCIAL_SAFE_LICENSES = new Set(["MIT", "Apache-2.0", "BSD-3-Clause", "BSD-2-Clause", "ISC", "0BSD"]);
 
+/**
+ * Formats the project information into a human-readable text output.
+ *
+ * @param projects Array of project information.
+ * @returns Formatted text output.
+ */
 const formatTextOutput = (projects: ProjectInfo[]): string => {
   const lines: string[] = [];
   const separator = "=".repeat(80);
@@ -74,6 +80,12 @@ const formatTextOutput = (projects: ProjectInfo[]): string => {
   return lines.join("\n");
 };
 
+/**
+ * Parses the license summary output into a record of license counts.
+ *
+ * @param summary License summary output.
+ * @returns Record of license counts.
+ */
 const parseLicenseSummary = (summary: string): Record<string, number> => {
   const counts: Record<string, number> = {};
   const lines = summary.split("\n");
@@ -86,12 +98,26 @@ const parseLicenseSummary = (summary: string): Record<string, number> => {
   return counts;
 };
 
+/**
+ * Writes the project information results to a file.
+ *
+ * @param results Array of project information.
+ * @param outputFile Path to the output file.
+ * @param format Output format (text or json).
+ */
 export const writeResults = async (results: ProjectInfo[], outputFile: string, format: "text" | "json"): Promise<void> => {
   const content = format === "json" ? JSON.stringify(results, null, 2) : formatTextOutput(results);
 
   await Deno.writeTextFile(outputFile, content);
 };
 
+/**
+ * Gets the relative path from the root directory.
+ *
+ * @param path Absolute path.
+ * @param rootDir Root directory.
+ * @returns Relative path.
+ */
 export const getRelativePath = (path: string, rootDir: string): string => {
   return relative(rootDir, path);
 };

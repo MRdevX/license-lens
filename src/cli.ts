@@ -2,6 +2,9 @@ import { parseArgs } from "jsr:@std/cli@1/parse-args";
 import { checkLicenses } from "./services/license-checker.ts";
 import packageData from "../deno.json" with { type: "json" };
 
+/**
+ * Displays the help message for the CLI.
+ */
 const showHelp = () => {
   console.log(`
 License Scout v${packageData.version}
@@ -52,6 +55,9 @@ For more information, visit: https://jsr.io/@mrdevx/license-scout
 `);
 };
 
+/**
+ * Displays the version information for the CLI.
+ */
 const showVersion = () => {
   console.log(`License Scout v${packageData.version}`);
   console.log(`
@@ -62,7 +68,7 @@ TypeScript: ${Deno.version.typescript}
 };
 
 /**
- * Main CLI entry point for license-scout
+ * Main CLI entry point for license-scout.
  * 
  * @example Basic usage
  * ```ts

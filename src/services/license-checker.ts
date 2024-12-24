@@ -90,6 +90,19 @@ export interface ProgressInfo {
   projectName: string;
 }
 
+/**
+ * Main function to check licenses in a directory.
+ *
+ * @param rootDir Directory to scan for projects.
+ * @param outputFile Path to write the results.
+ * @param config Configuration options for the scan.
+ * @param onProgress Optional callback for progress updates.
+ *
+ * @example
+ * ```ts
+ * await checkLicenses("./projects", "licenses.txt", { outputFormat: "json" });
+ * ```
+ */
 export const checkLicenses = async (
   rootDir: string,
   outputFile: string,
@@ -117,6 +130,13 @@ export const checkLicenses = async (
   }
 };
 
+/**
+ * Reads and parses a package.json file.
+ *
+ * @param path Path to the package.json file.
+ * @returns Parsed package.json content.
+ * @throws LicenseCheckerError if the package.json file is not found.
+ */
 const readPackageJson = async (path: string): Promise<PackageJson> => {
   try {
     const content = await Deno.readTextFile(path);
