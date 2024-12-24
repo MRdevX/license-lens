@@ -17,10 +17,12 @@ import { findProjects } from "./project-finder.ts";
  */
 
 /**
- * Analyzes a list of projects and extracts their license information
- * @param projects Array of project paths to analyze
- * @param rootDir Root directory for relative path calculation
- * @returns Array of project information including licenses
+ * Analyzes a list of projects and extracts their license information.
+ *
+ * @param projects Array of project paths to analyze.
+ * @param rootDir Root directory for relative path calculation.
+ * @param onProgress Optional callback for progress updates.
+ * @returns Array of project information including licenses.
  */
 const analyzeProjects = async (
   projects: string[],
@@ -110,9 +112,10 @@ export const checkLicenses = async (
   onProgress?: (info: ProgressInfo) => void
 ): Promise<void> => {
   try {
-    // Ensure correct file extension
+    // Generate the output file name based on the current date
+    const currentDate = new Date().toISOString().split("T")[0]; // Format: YYYY-MM-DD
     const fileExtension = config.outputFormat === "json" ? ".json" : ".txt";
-    const finalOutputFile = outputFile.endsWith(fileExtension) ? outputFile : `${outputFile}${fileExtension}`;
+    const finalOutputFile = `license-lens-${currentDate}${fileExtension}`;
 
     console.log("🔍 Starting license scan...");
     const projects = await findProjects(rootDir, DEFAULT_CONFIG);

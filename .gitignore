@@ -4,3 +4,5 @@
 # License check results
 license-check-results.txt
 license-check-results.json
+license-lens*.json
+license-lens*.txt
