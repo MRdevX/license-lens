@@ -27,6 +27,19 @@ const showVersion = () => {
   console.log(`License Scout v${packageData.version}`);
 };
 
+/**
+ * Main CLI entry point for license-scout
+ * 
+ * @example Basic usage
+ * ```ts
+ * license-scout ./my-project
+ * ```
+ * 
+ * @example With options
+ * ```ts
+ * license-scout -f json -o licenses.json ./my-project
+ * ```
+ */
 export const main = async () => {
   const flags = parseArgs(Deno.args, {
     string: ["output", "format", "exclude"],

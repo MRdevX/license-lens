@@ -1,10 +1,15 @@
+// Node.js built-ins
 import { basename, join } from "node:path";
+
+// Types
 import type { ProjectInfo, PackageJson } from "../interfaces/index.ts";
+
+// Project imports
 import { DEFAULT_CONFIG } from "../interfaces/index.ts";
+import { LicenseCheckerError } from "../utils/errors.ts";
 import { runCommand } from "../utils/command.ts";
 import { getRelativePath, writeResults } from "../utils/file.ts";
 import { findProjects } from "./project-finder.ts";
-import { LicenseCheckerError } from "../utils/errors.ts";
 
 /**
  * Analyzes projects for license information
