@@ -1,6 +1,6 @@
 import { parseArgs } from "jsr:@std/cli@1/parse-args";
 import { checkLicenses } from "./services/license-checker.ts";
-import { version } from "../version.json" assert { type: "json" };
+import { version } from "../version.json" with { type: "json" };
 
 const showHelp = () => {
   console.log(`
