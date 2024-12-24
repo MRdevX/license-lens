@@ -1,5 +1,7 @@
 {
-  "changelog": {},
+  "changelog": {
+    "file": "CHANGELOG.md"
+  },
   "github": {
     "release": true
   },
@@ -13,5 +15,7 @@
       "patterns": ["(?<=\"version\": \")(.*)(?=\",)"]
     }
   ],
-  "versionFile": {}
+  "versionFile": {
+    "file": "version.json"
+  }
 }
