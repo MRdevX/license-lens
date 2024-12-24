@@ -11,8 +11,22 @@ A powerful tool for scanning and analyzing license information in your projects.
 
 ## Installation
 
+### As a Package Dependency
+
 ```bash
 deno add jsr:@mrdevx/license-scout
+```
+
+### Global Installation
+
+```bash
+deno install --global --force -A -n license-scout jsr:@mrdevx/license-scout
+```
+
+After global installation, you can run the tool from anywhere using:
+
+```bash
+license-scout [directory] [output-file]
 ```
 
 ## Usage
