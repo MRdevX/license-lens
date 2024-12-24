@@ -1,4 +1,4 @@
-# License Scout
+# License Lens
 
 A powerful tool for scanning and analyzing license information in your projects. This tool helps you track and manage licenses across your project dependencies.
 
@@ -34,7 +34,7 @@ license-lens [options] [directory]
 ## Command Line Interface
 
 ```bash
-License Scout
+License Lens
 A tool for scanning and analyzing license information in projects.
 
 Usage:
@@ -42,14 +42,14 @@ Usage:
 
 Options:
   -h, --help                Show this help message
-  -v, --version            Show version information
-  -o, --output <file>      Output file path (default: license-check-results.[txt|json])
-  -f, --format <format>    Output format (text|json) (default: text)
-  -e, --exclude <dirs>     Directories to exclude (comma-separated)
-  --include-dev           Include dev dependencies in analysis
-  --fail-missing          Exit with error if licenses are missing
-  --exclude-licenses      Licenses to exclude from report (comma-separated)
-  --depth <number>        Maximum directory depth to scan (default: Infinity)
+  -v, --version             Show version information
+  -o, --output <file>       Output file path (default: license-lens-[date].[txt|json])
+  -f, --format <format>     Output format (text|json) (default: text)
+  -e, --exclude <dirs>      Directories to exclude (comma-separated)
+  --include-dev             Include dev dependencies in analysis
+  --fail-missing            Exit with error if licenses are missing
+  --exclude-licenses        Licenses to exclude from report (comma-separated)
+  --depth <number>          Maximum directory depth to scan (default: Infinity)
 ```
 
 ### Examples
@@ -95,7 +95,7 @@ You can combine these using the `-A` flag for all permissions.
 
 ## Checking Libraries and Dependencies for Commercial Use
 
-License Scout provides detailed information about the licenses of your project's dependencies, including whether they are safe for commercial use. The tool categorizes licenses into two main categories:
+License Lens provides detailed information about the licenses of your project's dependencies, including whether they are safe for commercial use. The tool categorizes licenses into two main categories:
 
 Safe for commercial use: These licenses are generally considered safe for commercial use.
 Review license terms: These licenses may have restrictions or conditions that require further review before using them in a commercial project.
@@ -134,7 +134,7 @@ In the example above, the tool provides a summary of the licenses for all depend
 
 ## API Usage
 
-You can also use License Scout programmatically:
+You can also use License Lens programmatically:
 
 ```typescript
 import { checkLicenses } from "@mrdevx/license-lens";
