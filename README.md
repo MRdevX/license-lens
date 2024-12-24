@@ -8,6 +8,7 @@ A powerful tool for scanning and analyzing license information in your projects.
 - Supports multiple package manager ecosystems
 - Generates detailed license reports
 - Easy to use command-line interface
+- Supports both text and JSON output formats
 
 ## Installation
 
@@ -26,7 +27,7 @@ deno install --global --force -A -n license-scout jsr:@mrdevx/license-scout
 After global installation, you can run the tool from anywhere using:
 
 ```bash
-license-scout [directory] [output-file]
+license-scout [options] [directory]
 ```
 
 ## Usage
@@ -34,9 +35,6 @@ license-scout [directory] [output-file]
 ### Command Line Options
 
 ```bash
-License Scout v3.0.0
-A tool for scanning and analyzing license information in projects.
-
 Usage:
   license-scout [options] [directory]
 
@@ -47,7 +45,7 @@ Options:
   -f, --format <format>   Output format (text|json) (default: text)
 ```
 
-### Basic Commands
+### Examples
 
 **Show help:**
 
@@ -61,22 +59,28 @@ license-scout --help
 license-scout --version
 ```
 
-**Scan current directory with default output:**
+**Scan current directory:**
 
 ```bash
-deno run -A license-scout.ts
+license-scout
 ```
 
 **Scan specific directory:**
 
 ```bash
-deno run -A license-scout.ts ./my-project
+license-scout ./my-project
 ```
 
-**Scan and output to specific file:**
+**Specify output file:**
 
 ```bash
-deno run -A license-scout.ts ./my-project licenses.txt
+license-scout -o licenses.txt ./my-project
+```
+
+**Generate JSON output:**
+
+```bash
+license-scout -f json -o licenses.json ./my-project
 ```
 
 ### Output Formats
@@ -86,19 +90,7 @@ The tool supports two output formats:
 - **Text** (default): Human-readable format (`.txt`)
 - **JSON**: Machine-readable format (`.json`)
 
-**Text format example:**
-
-```bash
-deno run -A license-scout.ts ./my-project licenses.txt
-```
-
-**JSON format example:**
-
-```bash
-deno run -A license-scout.ts --format json ./my-project licenses.json
-```
-
-> **Note:** When using `--format json`, it's recommended to use the `.json` file extension for better compatibility with other tools.
+> **Note:** When using JSON format (`-f json`), it's recommended to use the `.json` file extension for better compatibility with other tools.
 
 ### Required Permissions
 
@@ -136,18 +128,6 @@ Apache-2.0: 5
 =====================================
 ```
 
-## Configuration
-
-You can configure the tool using `deno.json` in your project:
-
-```json
-{
-  "tasks": {
-    "start": "deno run -A license-scout.ts"
-  }
-}
-```
-
 ## API Usage
 
 You can also use License Scout programmatically:
@@ -158,6 +138,12 @@ import { checkLicenses } from "@mrdevx/license-scout";
 await checkLicenses("./projects", "licenses.txt", { outputFormat: "json" });
 ```
 
+## Runtime Support
+
+- Deno (>= 1.37)
+- Node.js (>= 18)
+- Bun (>= 1.0)
+
 ## Contributing
 
 1. Fork the repository
@@ -165,12 +151,6 @@ await checkLicenses("./projects", "licenses.txt", { outputFormat: "json" });
 3. Commit your changes (`git commit -m 'Add some amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
-
-## Runtime Support
-
-- Deno (>= 1.37)
-- Node.js (>= 18)
-- Bun (>= 1.0)
 
 ## License
 
